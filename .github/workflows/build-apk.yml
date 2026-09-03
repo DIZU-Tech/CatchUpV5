@@ -15,17 +15,18 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
       - run: npm ci --legacy-peer-deps
-      - run: npx expo install --fix
       - run: npx expo prebuild --clean --platform android
-      - name: Force Gradle 8.6 for SDK 51
+      - name: Force Gradle 8.6
+        run: sed -i 's/gradle-8.8-all.zip/gradle-8.6-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
+      - name: Build RELEASE APK offline
         run: |
-          sed -i 's/gradle-8.8-all.zip/gradle-8.6-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
-          cat android/gradle/wrapper/gradle-wrapper.properties
-      - name: Build Debug APK with Java 17
-        env:
-          JAVA_HOME: ${{ env.JAVA_HOME }}
-        run: cd android &&./gradlew assembleDebug --no-daemon -Dorg.gradle.java.home=$JAVA_HOME
+          cd android
+         ./gradlew assembleRelease --no-daemon \
+          -Pandroid.injected.signing.store.file=$PWD/app/debug.keystore \
+          -Pandroid.injected.signing.store.password=android \
+          -Pandroid.injected.signing.key.alias=androiddebugkey \
+          -Pandroid.injected.signing.key.password=android
       - uses: actions/upload-artifact@v4
         with:
           name: CatchUp-APK
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: android/app/build/outputs/apk/release/app-release.apk
