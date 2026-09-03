@@ -17,7 +17,10 @@
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#000000"
       },
-      "permissions": ["INTERNET","WRITE_EXTERNAL_STORAGE"]
+      "permissions": [
+        "INTERNET",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "ios": {
       "bundleIdentifier": "com.catchup.v5"
@@ -25,9 +28,17 @@
     "web": {
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "extra": {
-      "eas": { "projectId": "catch-up-v5-final" }
-    }
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "18fa26bc-1330-4452-bcbc-dfea3b445378"
+      }
+    },
+    "owner": "dizu.org"
   }
 }
