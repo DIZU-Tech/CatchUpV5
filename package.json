@@ -1,0 +1,33 @@
+{
+  "name": "catch-up",
+  "version": "5.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "@tanstack/react-query": "^5.0.0",
+    "expo": "~51.0.28",
+    "expo-av": "~14.0.6",
+    "expo-constants": "~16.0.2",
+    "expo-file-system": "~17.0.1",
+    "expo-image-picker": "~15.0.7",
+    "expo-linking": "~6.3.1",
+    "expo-media-library": "~16.0.3",
+    "expo-router": "~3.5.23",
+    "expo-status-bar": "^57.0.1",
+    "expo-web-browser": "~13.0.3",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-safe-area-context": "^5.9.1",
+    "react-native-screens": "^4.27.0",
+    "react-native-webview": "13.8.4",
+    "zustand": "4.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "babel-preset-expo": "~11.0.14"
+  }
+}

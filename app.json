@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Catch Up",
+    "slug": "catch-up",
+    "version": "5.0.0",
+    "orientation": "portrait",
+    "scheme": "catchup",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "android": {
+      "package": "com.catchup.v5",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#000000"
+      },
+      "permissions": ["INTERNET","WRITE_EXTERNAL_STORAGE"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.catchup.v5"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": ["expo-router"],
+    "extra": {
+      "eas": { "projectId": "catch-up-v5-final" }
+    }
+  }
+}

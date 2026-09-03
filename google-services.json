@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353711037348",
+    "project_id": "catch-up-001",
+    "storage_bucket": "catch-up-001.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353711037348:android:3bcbf0c36cf3756e443f31",
+        "android_client_info": {
+          "package_name": "com.catchup.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353711037348-mgta26mc12mmtn2fuesppuslbadvnuvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHTWCNhEekQFrJYMipP1fS5pIlH7GkjC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353711037348-mgta26mc12mmtn2fuesppuslbadvnuvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
