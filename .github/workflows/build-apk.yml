@@ -15,8 +15,14 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
       - run: npm ci --legacy-peer-deps
+      - run: npx expo install --fix
       - run: npx expo prebuild --clean --platform android
-      - run: sed -i 's/gradle-8.8-all.zip/gradle-8.6-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
+      - name: Patch Gradle and AGP for SDK 51
+        run: |
+          sed -i 's/gradle-8.8-all.zip/gradle-8.6-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
+          sed -i "s/com.android.tools.build:gradle:.*/com.android.tools.build:gradle:8.2.1'/" android/build.gradle
+          cat android/gradle/wrapper/gradle-wrapper.properties
+          cat android/build.gradle | grep gradle
       - run: cd android &&./gradlew assembleRelease --no-daemon -Pandroid.injected.signing.store.file=$PWD/app/debug.keystore -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
       - uses: actions/upload-artifact@v4
         with:
